@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container" >
+        <h1>BudgetBuddy</h1>
+
+        <!-- Navigation -->
+        <nav style="height: 200px;">
+            <a href="savings.html">Set Savings Goal</a>
+            <a href="overall.html">View Overall Expenses</a>
+            <a href="categories.html">View by Categories</a>
+            <a href="saving-tips.html">Saving Tips</a>
+             <!-- New Link -->
+        </nav>
+
+        <!-- Expense Form -->
+        <form id="expense-form">
+            <input type="text" id="expense-name" placeholder="Expense Name" required>
+            <input type="number" id="expense-amount" placeholder="Amount (INR)" required>
+            <select id="expense-category" required>
+                <option value="">Select Category</option>
+                <!-- Categories will be dynamically loaded here -->
+                <option value="groceries">Groceries</option>
+                <option value="medicines">Medicines</option>
+                <option value="rent">Rent</option>
+                <option value="utilities">Utilities</option>
+                <option value="others">Others</option>
+            </select>
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <!-- Expenses -->
+        <h2>Expenses</h2>
+        <ul id="expense-list"></ul>
+
+        <!-- Total -->
+        <h3>Total Expenses: ₹<span id="total-expenses">0.00</span></h3>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

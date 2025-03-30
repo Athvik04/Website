@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category-wise Expenses - Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Category-wise Expenses</h1>
+
+        <!-- Navigation -->
+        <nav>
+            <a href="dashboard.html">Back to Dashboard</a>
+            <a href="overall.html">View Overall Expenses</a>
+            <a href="savings.html">Set Savings Goal</a>
+            <a href="new-categories.html">Create New Categories</a>
+        </nav>
+
+        <!-- Category Selector -->
+        <h2>Select a Category</h2>
+        <select id="category-selector">
+            <option value="">-- Select Category --</option>
+        </select>
+
+        <!-- Expenses List -->
+        <h2 id="category-title">Expenses</h2>
+        <ul id="category-expenses">
+            <!-- Category-specific expenses will be dynamically generated here -->
+        </ul>
+
+        <!-- Total for Selected Category -->
+        <h3>Total for Selected Category: ₹<span id="category-total">0.00</span></h3>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const categorySelector = document.getElementById("category-selector");
+            const categoryTitle = document.getElementById("category-title");
+            const categoryExpenses = document.getElementById("category-expenses");
+            const categoryTotal = document.getElementById("category-total");
+
+            const expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+
+            // Update expenses for the selected category
+            categorySelector.addEventListener("change", () => {
+                const selectedCategory = categorySelector.value;
+                if (!selectedCategory) {
+                    categoryExpenses.innerHTML = "";
+                    categoryTotal.textContent = "0.00";
+                    categoryTitle.textContent = "Expenses";
+                    return;
+                }
+
+                // Filter expenses by selected category
+                const filteredExpenses = expenses.filter(expense => expense.category === selectedCategory);
+
+                // Calculate total for the selected category
+                const totalForCategory = filteredExpenses.reduce((sum, expense) => sum + expense.amount, 0);
+
+                // Update UI
+                categoryTitle.textContent = `Expenses for ${selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}`;
+                categoryTotal.textContent = totalForCategory.toFixed(2);
+                categoryExpenses.innerHTML = "";
+
+                // Populate list
+                filteredExpenses.forEach(expense => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${expense.name} - ₹${expense.amount.toFixed(2)}`;
+                    categoryExpenses.appendChild(listItem);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

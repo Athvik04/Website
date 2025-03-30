@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Tips - Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Saving Tips</h1>
+
+        <!-- Navigation -->
+        <nav>
+            <a href="dashboard.html">Back to Dashboard</a>
+            <a href="overall.html">View Overall Expenses</a>
+            <a href="categories.html">View by Categories</a>
+            <a href="savings.html">Set Savings Goal</a>
+        </nav>
+
+        <!-- Saving Tips Section -->
+        <h2>Your Spending Insights</h2>
+        <p id="spending-insights">Analyzing your spending...</p>
+
+        <h2>Personalized Saving Tips</h2>
+        <ul id="saving-tips">
+            <!-- Tips will be dynamically generated here -->
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const savingTipsElement = document.getElementById("saving-tips");
+            const spendingInsightsElement = document.getElementById("spending-insights");
+
+            const expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+            const categoryTotals = {};
+
+            // Calculate total for each category
+            expenses.forEach(expense => {
+                if (!categoryTotals[expense.category]) {
+                    categoryTotals[expense.category] = 0;
+                }
+                categoryTotals[expense.category] += expense.amount;
+            });
+
+            // Generate spending insights
+            if (Object.keys(categoryTotals).length === 0) {
+                spendingInsightsElement.textContent = "No expenses recorded yet.";
+                return;
+            }
+
+            const highestCategory = Object.keys(categoryTotals).reduce((a, b) =>
+                categoryTotals[a] > categoryTotals[b] ? a : b
+            );
+            spendingInsightsElement.textContent = `You are spending the most on ${highestCategory.charAt(0).toUpperCase() + highestCategory.slice(1)
+                } (₹${categoryTotals[highestCategory].toFixed(2)}).`;
+
+            // Provide saving tips based on categories
+            const tips = {
+                groceries: "Plan your meals and create a shopping list to avoid unnecessary purchases.",
+                medicines: "Consider generic alternatives and track your pharmacy expenses to avoid overspending.",
+                rent: "Reassess your rental options to find more affordable housing if feasible.",
+                utilities: "Save energy by turning off appliances when not in use and switch to energy-efficient devices.",
+                others: "Track miscellaneous expenses closely and cut down on non-essential purchases.",
+            };
+
+            savingTipsElement.innerHTML = "";
+
+            for (const category in categoryTotals) {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${category.charAt(0).toUpperCase() + category.slice(1)}: ${tips[category] || "Track and analyze your spending to identify areas to save."}`;
+                savingTipsElement.appendChild(listItem);
+            }
+        });
+    </script>
+</body>
+
+</html>

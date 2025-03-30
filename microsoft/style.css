@@ -1,0 +1,514 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(38, 38, 38);
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    padding: 5px 65px;
+    gap: 20px;
+}
+
+nav img {
+    width: 100px;
+
+}
+
+nav span a{
+    text-decoration: none;
+    color: rgb(38, 38, 38);
+}
+
+nav span a:hover{
+    text-decoration: underline;
+}
+
+nav div span {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+nav div svg {
+    padding: 0;
+    margin: 0;
+
+}
+
+.first {
+    width: 100%;
+    height: 61vh;
+}
+
+.first img {
+    width: 100%;
+    position: absolute;
+}
+
+.first .contents {
+    width: 525px;
+    height: 250px;
+    background-color: transparent;
+    position: relative;
+    top: 40px;
+    left: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    gap: 10px;
+}
+
+.first .contents .one button {
+    background-color: orange;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    width: 60px;
+    height: 30px;
+    padding: 5px 10px;
+}
+
+.first .contents .two :first-child {
+    font-size: 37px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.first .contents .two:nth-child(2) {
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 20px;
+}
+
+.first .contents .three button {
+    background-color: rgb(0, 103, 184);
+    color: white;
+    width: 110px;
+    height: 40px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.arrows {
+    width: 100%;
+    height: 7vh;
+    padding: 3px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrows svg {
+    padding: 0px 10px;
+
+}
+
+.others {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 0px;
+    width: 100%;
+    height: 25vh;
+}
+
+.others img {
+    width: 40px;
+}
+
+.others .sub {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.others .sub a {
+    color: rgb(0, 103, 184);
+}
+
+
+.features {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+
+}
+
+.features .cont {
+    width: 320px;
+    height: 68vh;
+    box-shadow: 0px 0px 5px #747171a0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.features .cont img {
+    width: 100%;
+}
+
+.features .cont .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 25px;
+
+}
+
+.features .cont .text .head {
+    font-size: 29px;
+    font-weight: 600;
+}
+
+.features .cont .text .body {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+.features .cont .button {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 25px;
+    gap: 15px;
+
+}
+
+.features .cont .button button {
+    background-color: rgb(0, 103, 184);
+    color: white;
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.features .cont .button a {
+    color: rgb(0, 103, 184);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.features .cont .b1 {
+    position: absolute;
+    bottom: 25px;
+}
+
+.features .cont .b2 button {
+    position: absolute;
+    bottom: 25px;
+    width: 180px;
+}
+
+.features .cont .b3 button {
+    position: absolute;
+    bottom: 25px;
+    width: 180px;
+}
+
+.second {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+}
+
+.second img {
+    width: 90%;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+.second .contents {
+    width: 350px;
+    height: 270px;
+    background-color: transparent;
+    position: relative;
+    top: 10px;
+    left: -390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+
+.second .contents .two :first-child {
+    font-size: 37px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.second .contents .two:nth-child(2) {
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 20px;
+}
+
+.second .contents .three button {
+    background-color: rgb(0, 103, 184);
+    color: white;
+    width: 210px;
+    height: 40px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+.gap{
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.gap div{
+    width: 100%;
+    height: 6vh;
+    font-size: 37px;
+    font-weight: 600;
+    padding: 5px 75px;
+}
+
+.gap p{
+    
+    
+    align-self: center;
+}
+
+
+.bussfeatures {
+    display: flex;
+    width: 100%;
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+
+}
+
+.bussfeatures .cont {
+    width: 320px;
+    height: 56vh;
+    box-shadow: 0px 0px 5px #747171a0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.bussfeatures .cont img {
+    width: 100%;
+}
+
+.bussfeatures .cont .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 25px;
+
+}
+
+.bussfeatures .cont .text .head {
+    font-size: 29px;
+    font-weight: 600;
+}
+
+.bussfeatures .cont .text .body {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+.bussfeatures .cont .button {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 25px;
+    gap: 15px;
+
+
+}
+
+.bussfeatures .cont .button button {
+    background-color: rgb(0, 103, 184);
+    color: white;
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.bussfeatures .cont .button a {
+    color: rgb(0, 103, 184);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.bussfeatures .cont .b {
+    position: absolute;
+    bottom: 25px;
+}
+
+.bussfeatures .cont .b1 {
+    position: absolute;
+    bottom: 25px;
+}
+
+.bussfeatures .cont .b2 button {
+    position: absolute;
+    bottom: 25px;
+    width: 180px;
+}
+
+.bussfeatures .cont .b3 button {
+    position: absolute;
+    bottom: 25px;
+    width: 250px;
+}
+
+.sep{display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30vh;
+}
+
+.sep img{
+    width: 40px;
+}
+
+.sep div{
+    display: flex;
+    align-items: center;
+    padding: 0px 80px;
+    gap: 15px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.final{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 0px 80px;
+    background-color: rgba(154, 154, 154, 0.21);
+    
+}
+
+.final div{
+    height: 36vh;
+    padding: 20px 10px;
+    
+}
+
+.final li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    font-weight: 400;
+    margin: 20px 0px;
+    
+}
+
+.final li a{
+    text-decoration: none;
+    color: rgb(38, 38, 38);
+}
+
+
+.final li a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+footer{
+    width: 100%;
+    height: 8vh;
+    background-color: rgba(154, 154, 154, 0.21);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(38, 38, 38);
+    font-size: 11px;
+    font-weight: 400;
+
+}
+footer a{
+    text-decoration: none;
+    color: rgb(38, 38, 38);
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+footer .left{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 75px;
+}
+
+footer .left img{
+    width: 24px;
+}
+
+footer .right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 75px;
+}
+
+

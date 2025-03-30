@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overall Expenses - Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Overall Expenses</h1>
+
+        <!-- Navigation -->
+        <nav>
+            <a href="dashboard.html">Back to Dashboard</a>
+            <a href="categories.html">View by Categories</a>
+            <a href="savings.html">Set Savings Goal</a>
+        </nav>
+
+        <!-- Total Expenses -->
+        <h2>Total Expenses</h2>
+        <h3>₹<span id="total-expenses">0.00</span></h3>
+
+        <!-- Breakdown by Category -->
+        <h2>Expense Breakdown</h2>
+        <ul id="expense-breakdown">
+            <!-- Categories and their totals will be dynamically generated here -->
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const totalExpenses = document.getElementById("total-expenses");
+            const expenseBreakdown = document.getElementById("expense-breakdown");
+
+            const expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+
+            // Calculate total expenses and breakdown by category
+            let totalExpenseAmount = 0;
+            const categoryTotals = {};
+
+            expenses.forEach(expense => {
+                totalExpenseAmount += expense.amount;
+                if (!categoryTotals[expense.category]) {
+                    categoryTotals[expense.category] = 0;
+                }
+                categoryTotals[expense.category] += expense.amount;
+            });
+
+            // Update total expenses
+            totalExpenses.textContent = totalExpenseAmount.toFixed(2);
+
+            // Display breakdown by category
+            expenseBreakdown.innerHTML = "";
+            for (const category in categoryTotals) {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${category.charAt(0).toUpperCase() + category.slice(1)}: ₹${categoryTotals[category].toFixed(2)}`;
+                expenseBreakdown.appendChild(listItem);
+            }
+        });
+    </script>
+</body>
+
+</html>

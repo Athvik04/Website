@@ -1,0 +1,197 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+form,
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+select,
+button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+nav a {
+    text-decoration: none;
+    color: #007bff;
+    text-align: center;
+    margin: 5px 0;
+}
+
+nav a:hover {
+    color: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+} */
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation */
+nav {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 8px 15px;
+    color: #a27ce3;
+    border: 1px solid #a27ce3;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #a27ce3;
+    color: #ffffff;
+}
+
+/* Form Styles */
+form {
+    margin: 20px 0;
+}
+
+form input,
+form select,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form input:focus,
+form select:focus,
+form button:focus {
+    border-color: #a27ce3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+form button {
+    background-color: #a27ce3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #a27ce3;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #f0f0f0;
+    margin: 5px 0;
+    padding: 10px;
+    border-left: 5px solid #a27ce3;
+    border-radius: 5px;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+    color: #a27ce3;
+    text-align: center;
+}
+
+/* Total Expenses */
+#total-expenses {
+    font-weight: bold;
+    color: #e53935;
+}
+
+/* Alerts */
+.alert {
+    padding: 10px;
+    background-color: #ffcccb;
+    color: #e53935;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}

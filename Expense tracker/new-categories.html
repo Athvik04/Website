@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Categories - Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Create New Categories</h1>
+
+        <!-- Navigation -->
+        <nav>
+            <a href="dashboard.html">Back to Dashboard</a>
+            <a href="overall.html">View Overall Expenses</a>
+            <a href="categories.html">View by Categories</a>
+            <a href="saving-tips.html">Saving Tips</a>
+        </nav>
+
+        <!-- Form to Add New Category -->
+        <h2>Add a New Category</h2>
+        <form id="new-category-form">
+            <input type="text" id="category-name" placeholder="Enter category name" required>
+            <button type="submit">Add Category</button>
+        </form>
+
+        <!-- List of Existing Categories -->
+        <h2>Existing Categories</h2>
+        <ul id="category-list">
+            <!-- Categories will be dynamically added here -->
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const categoryList = document.getElementById("category-list");
+            const newCategoryForm = document.getElementById("new-category-form");
+            const categoryNameInput = document.getElementById("category-name");
+
+            // Fetch existing categories from localStorage or initialize with default categories
+            let categories = JSON.parse(localStorage.getItem("categories")) || ["groceries", "medicines", "rent", "utilities", "others"];
+
+            // Function to render the list of categories
+            const renderCategories = () => {
+                categoryList.innerHTML = "";
+                categories.forEach(category => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+                    categoryList.appendChild(listItem);
+                });
+            };
+
+            // Handle new category addition
+            newCategoryForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const newCategory = categoryNameInput.value.trim().toLowerCase();
+
+                if (newCategory && !categories.includes(newCategory)) {
+                    categories.push(newCategory);
+                    localStorage.setItem("categories", JSON.stringify(categories));
+                    renderCategories();
+                    categoryNameInput.value = "";
+                    alert("Category added successfully!");
+                } else {
+                    alert("Category already exists or is invalid!");
+                }
+            });
+
+            // Render initial categories on load
+            renderCategories();
+        });
+    </script>
+</body>
+
+</html>
